@@ -1,0 +1,209 @@
+:root {
+   --bg-gradient: linear-gradient(135deg, #0f172a, #1e1b4b, #311042);
+   --glass-bg: rgba(255, 255, 255, 0.06);
+   --glass-border: rgba(255, 255, 255, 0.12);
+   --glass-hover: rgba(255, 255, 255, 0.18);
+
+   --color-primary: #a855f7;
+   --color-success: #10b981;
+   --color-item-bg: linear-gradient(135deg, #f97316, #ea580c);
+
+   --shadow-sm: 0 2px 8px -1px rgba(0, 0, 0, 0.2);
+   --shadow-md: 0 12px 24px -4px rgba(0, 0, 0, 0.3);
+
+   --radius-lg: 16px;
+   --radius-md: 12px;
+   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
+   background: var(--bg-gradient);
+   background-attachment: fixed;
+   min-height: 100vh;
+   color: #f8fafc;
+   overflow-x: hidden;
+}
+
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   min-height: calc(100vh - 60px);
+   padding: 20px;
+   gap: 25px;
+}
+
+h1 {
+   font-size: 2.5rem;
+   font-weight: 800;
+   letter-spacing: -0.05em;
+   background: linear-gradient(to right, #fff, #cbd5e1);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   margin-top: 10px;
+}
+
+/* Área Neutra com 5 caixas */
+.neutralArea {
+   width: 100%;
+   max-width: 650px;
+   height: 130px;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   background: var(--glass-bg);
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+   border: 1px solid var(--glass-border);
+   border-radius: var(--radius-lg);
+   box-shadow: var(--shadow-md);
+   padding: 0 15px;
+}
+
+.item {
+   width: 80px;
+   height: 80px;
+   background: var(--color-item-bg);
+   border-radius: var(--radius-md);
+   box-shadow:
+      var(--shadow-sm),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+   color: #fff;
+   font-size: 26px;
+   font-weight: 700;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: grab;
+   transition:
+      transform var(--transition-fast),
+      box-shadow var(--transition-fast);
+   user-select: none;
+}
+
+.item:hover {
+   transform: translateY(-4px);
+   box-shadow:
+      var(--shadow-md),
+      0 4px 12px rgba(249, 115, 22, 0.4);
+}
+
+.item:active {
+   cursor: grabbing;
+}
+
+.item.dragging {
+   opacity: 0.3;
+   transform: scale(0.9);
+}
+
+.item-active-drag {
+   outline: 2px solid var(--color-primary);
+   outline-offset: 4px;
+}
+
+/* Container de Áreas das caixas */
+.areas {
+   display: flex;
+   justify-content: center;
+   gap: 12px;
+   width: 100%;
+   max-width: 650px;
+}
+
+.area {
+   flex: 1;
+   height: 110px;
+   background: rgba(255, 255, 255, 0.02);
+   border: 2px dashed var(--glass-border);
+   border-radius: var(--radius-lg);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: all var(--transition-fast);
+}
+
+.hover {
+   background: var(--glass-hover);
+   border-color: var(--color-primary);
+   box-shadow: inset 0 0 12px rgba(168, 85, 247, 0.2);
+   transform: scale(1.02);
+}
+
+.areas.correct .area {
+   border: 2px solid var(--color-success);
+   background: rgba(16, 185, 129, 0.08);
+   box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+/* Botão de Reset */
+.btn-premium {
+   background: linear-gradient(135deg, #a855f7, #7c3aed);
+   color: white;
+   border: none;
+   padding: 12px 28px;
+   font-size: 15px;
+   font-weight: 600;
+   border-radius: var(--radius-md);
+   cursor: pointer;
+   box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+   transition: all var(--transition-fast);
+   margin-top: 10px;
+}
+
+.btn-premium:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+   background: linear-gradient(135deg, #b55fe6, #8b5cf6);
+}
+
+.btn-premium:active {
+   transform: translateY(0);
+}
+
+footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 60px;
+   color: #94a3b8;
+   font-size: 13px;
+   font-weight: 500;
+   background: rgba(15, 23, 42, 0.6);
+   backdrop-filter: blur(8px);
+   border-top: 1px solid var(--glass-border);
+}
+
+/* Responsividade  */
+@media (max-width: 600px) {
+   .neutralArea {
+      height: 100px;
+      padding: 0 8px;
+   }
+
+   .item {
+      width: 55px;
+      height: 55px;
+      font-size: 20px;
+   }
+
+   .area {
+      height: 80px;
+   }
+
+   h1 {
+      font-size: 1.8rem;
+   }
+}
