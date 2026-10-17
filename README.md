@@ -7,13 +7,21 @@
   <img src="https://img.shields.io/badge/Drag%20%26%20Drop-6C63FF?style=for-the-badge&logoColor=white" alt="Drag and Drop">
 </p>
 
+## 🌐 Visualização do Projeto
+
+<p align="center">
+  <a href="https://projeto-arrasta-e-solta.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Acessar%20Projeto%20Online-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Acessar projeto online na Vercel">
+  </a>
+</p>
+
 ## 📌 Sobre o Projeto
 
 O **Desafio Arrasta e Solta — Drag & Drop Puzzle** é uma aplicação interativa desenvolvida com HTML5, CSS3 e JavaScript puro (_Vanilla JavaScript_), na qual o usuário precisa organizar cinco blocos numéricos em suas respectivas áreas para completar um quebra-cabeça lógico.
 
-Desenvolvido a partir dos desafios de lógica e desenvolvimento front-end da plataforma B7Web, o projeto explora a API nativa **HTML5 Drag and Drop**, permitindo movimentar elementos entre uma área de armazenamento e caixas de destino com validação das posições em tempo real.
+Desenvolvido a partir dos desafios de lógica e desenvolvimento front-end da plataforma B7Web, o projeto utiliza a API nativa **HTML5 Drag and Drop** para permitir a movimentação de elementos entre uma área de armazenamento e caixas de destino, com validação das posições durante a partida.
 
-O principal objetivo é consolidar conhecimentos em manipulação do DOM, tratamento de eventos, movimentação de elementos, gerenciamento de estado e implementação de regras de negócio no lado do cliente.
+O objetivo é consolidar conhecimentos em manipulação do DOM, tratamento de eventos, movimentação de elementos, gerenciamento de estado e implementação de regras de negócio no lado do cliente.
 
 ## 🎯 Objetivos do Projeto
 
@@ -43,7 +51,7 @@ O desafio consiste em posicionar os cinco blocos numéricos nas caixas correspon
 4. **Atualização do estado:** após uma movimentação válida, a função `updateAreas` identifica os números presentes em cada caixa e atualiza o objeto lógico `areas`.
 5. **Condição de vitória:** a partida é concluída quando todos os números ocupam suas posições correspondentes.
 
-A condição lógica de vitória pode ser representada da seguinte forma:
+A condição lógica de vitória é representada pela seguinte expressão:
 
 ```javascript
 areas.a === "1" &&
@@ -57,7 +65,7 @@ areas.a === "1" &&
 
 | Tecnologia              | Aplicação no Projeto                                                 |
 | ----------------------- | -------------------------------------------------------------------- |
-| HTML5                   | Estrutura semântica e organização dos elementos da interface.        |
+| HTML5                   | Estrutura e organização dos elementos da interface.                  |
 | CSS3                    | Estilização, organização visual e apresentação das áreas do jogo.    |
 | JavaScript              | Implementação das regras de negócio, eventos e validação da partida. |
 | HTML5 Drag and Drop API | Interação de arrastar e soltar os blocos numéricos.                  |
@@ -69,7 +77,7 @@ areas.a === "1" &&
 
 A API nativa de arrastar e soltar permite controlar o início, a movimentação e a conclusão das operações realizadas pelo usuário.
 
-Os eventos associados ao fluxo de interação incluem:
+Os principais eventos envolvidos nesse fluxo são:
 
 - `dragstart`: identifica o início do arrastamento de um elemento.
 - `dragover`: permite habilitar uma área como destino quando o comportamento padrão é cancelado.
